@@ -26,24 +26,20 @@ class TestBurger:
         burger.add_ingredient(ingred_0)
         ingred_1 = mock_ingredient
         burger.add_ingredient(ingred_1)
-        burger.move_ingredient(1,0)
+        burger.move_ingredient(1, 0)
 
         assert burger.ingredients == [ingred_1, ingred_0]
 
     def test_get_price(self, burger, mock_ingredient, mock_bun):
         burger.set_buns(mock_bun)
         burger.add_ingredient(mock_ingredient)
-        # result_price = (Data.Burger[1])*2 + Data.Ingredient[2]
+
         assert burger.get_price() == Data.result_price
 
     def test_get_receipt(self, burger, mock_ingredient, mock_bun):
         burger.set_buns(mock_bun)
         burger.add_ingredient(mock_ingredient)
-        # result_receipt = f'(==== {mock_bun.get_name.return_value} ====)\n'\
-        # f'= {(mock_ingredient.get_type.return_value.lower())} {mock_ingredient.get_name.return_value} =\n'\
-        # f'(==== {mock_bun.get_name.return_value} ====)\n'\
-        # '\n'\
-        # f'Price: {burger.get_price()}'
+
         assert burger.get_receipt() == Data.result_receipt
 
 
